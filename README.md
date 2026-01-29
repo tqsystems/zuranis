@@ -54,6 +54,8 @@ A modern Next.js 14 application built with TypeScript, Tailwind CSS, NextAuth.js
 - 📚 [Getting Started Guide](docs/GETTING_STARTED.md) - Step-by-step guide for beginners
 - 🔧 [Setup Guide](docs/SETUP.md) - Detailed setup instructions
 - 🏗️ [Architecture](docs/ARCHITECTURE.md) - Project architecture and design decisions
+- 🔐 [Authentication Guide](docs/AUTHENTICATION.md) - Complete authentication documentation
+- 📋 [Auth Implementation](docs/AUTH_IMPLEMENTATION.md) - Authentication implementation summary
 - ⚡ [Quick Reference](docs/QUICK_REFERENCE.md) - Common patterns and code snippets
 - 🗄️ [Supabase Examples](docs/SUPABASE_EXAMPLE.md) - How to use Supabase in your app
 
