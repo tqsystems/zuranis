@@ -141,7 +141,6 @@ export async function getLatestRelease(userId: string): Promise<Release | null> 
       repositories!inner(*)
     `)
     .eq("repositories.user_id", userId)
-    .eq("repositories.is_active", true)
     .order("created_at", { ascending: false })
     .limit(1)
     .single();
@@ -180,7 +179,6 @@ export async function getAllReleases(
       repositories!inner(*)
     `)
     .eq("repositories.user_id", userId)
-    .eq("repositories.is_active", true)
     .order("created_at", { ascending: false })
     .range(offset, offset + limit - 1);
 
