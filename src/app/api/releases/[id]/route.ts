@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSession } from "@/lib/auth";
 import { getReleaseById, getRisks, getOrCreateUser } from "@/lib/supabase-server";
-import { supabaseServer } from "@/lib/supabase-server";
 import type { ReleaseDetailResponse, ReleaseMetrics } from "@/types/releases";
 import { formatMinutesToTime } from "@/lib/github-utils";
 
@@ -59,16 +58,9 @@ export async function GET(
     );
 
     // Fetch release with repository information
-    const { data: release, error: releaseError } = await supabaseServer
-      .from("releases")
-      .select(`
-        *,
-        repositories!inner(*)
-      `)
-      .eq("id", releaseId)
-      .single();
+    const release = await getReleaseById(releaseId);
 
-    if (releaseError || !release) {
+    if (!release) {
       console.log(`[API] Release not found: ${releaseId}`);
       return NextResponse.json(
         { error: "Release not found" },
@@ -77,8 +69,8 @@ export async function GET(
     }
 
     // Verify user owns this release (security check)
-    const repository = release.repositories;
-    if (repository.user_id !== user.id) {
+    const repository = (release as any).repositories;
+    if (!repository || repository.user_id !== user.id) {
       console.warn(`[API] Unauthorized access attempt to release ${releaseId} by user ${user.id}`);
       return NextResponse.json(
         { error: "Forbidden: You don't have access to this release" },

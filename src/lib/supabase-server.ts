@@ -7,14 +7,30 @@ import type {
   FeatureCoverage,
 } from "@/types/releases";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+/**
+ * Create a Supabase server client with service role key
+ * Uses lazy initialization to avoid build-time errors
+ * 
+ * @returns Supabase client instance
+ * @throws Error if environment variables are not set
+ */
+function getSupabaseServer() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-if (!supabaseUrl || !supabaseServiceKey) {
-  throw new Error("Missing Supabase environment variables");
+  if (!supabaseUrl || !supabaseServiceKey) {
+    throw new Error(
+      "Missing Supabase environment variables. Please set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY"
+    );
+  }
+
+  return createClient(supabaseUrl, supabaseServiceKey, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+  });
 }
-
-export const supabaseServer = createClient(supabaseUrl, supabaseServiceKey);
 
 /**
  * Create a new release in the database
@@ -38,7 +54,9 @@ export async function createRelease(data: {
   features?: FeatureCoverage[];
   raw_data?: any;
 }): Promise<Release> {
-  const { data: release, error } = await supabaseServer
+  const supabase = getSupabaseServer();
+  
+  const { data: release, error } = await supabase
     .from("releases")
     .insert([data])
     .select()
@@ -63,7 +81,9 @@ export async function updateRelease(
   id: string,
   data: Partial<Release>
 ): Promise<Release> {
-  const { data: release, error } = await supabaseServer
+  const supabase = getSupabaseServer();
+  
+  const { data: release, error } = await supabase
     .from("releases")
     .update(data)
     .eq("id", id)
@@ -85,7 +105,9 @@ export async function updateRelease(
  * @returns Release object or null
  */
 export async function getReleaseById(id: string): Promise<Release | null> {
-  const { data: release, error } = await supabaseServer
+  const supabase = getSupabaseServer();
+  
+  const { data: release, error } = await supabase
     .from("releases")
     .select("*, repositories(*)")
     .eq("id", id)
@@ -110,7 +132,9 @@ export async function getReleaseById(id: string): Promise<Release | null> {
  * @returns Latest release or null
  */
 export async function getLatestRelease(userId: string): Promise<Release | null> {
-  const { data: release, error } = await supabaseServer
+  const supabase = getSupabaseServer();
+  
+  const { data: release, error } = await supabase
     .from("releases")
     .select(`
       *,
@@ -147,7 +171,9 @@ export async function getAllReleases(
   limit: number = 20,
   offset: number = 0
 ): Promise<Release[]> {
-  const { data: releases, error } = await supabaseServer
+  const supabase = getSupabaseServer();
+  
+  const { data: releases, error } = await supabase
     .from("releases")
     .select(`
       *,
@@ -173,7 +199,9 @@ export async function getAllReleases(
  * @returns Array of risk items
  */
 export async function getRisks(releaseId: string): Promise<RiskItem[]> {
-  const { data: risks, error } = await supabaseServer
+  const supabase = getSupabaseServer();
+  
+  const { data: risks, error } = await supabase
     .from("risk_items")
     .select("*")
     .eq("release_id", releaseId)
@@ -203,7 +231,9 @@ export async function createRiskItem(data: {
   recommendation?: string;
   auto_generated?: boolean;
 }): Promise<RiskItem> {
-  const { data: risk, error } = await supabaseServer
+  const supabase = getSupabaseServer();
+  
+  const { data: risk, error } = await supabase
     .from("risk_items")
     .insert([data])
     .select()
@@ -237,7 +267,9 @@ export async function createRiskItems(
 ): Promise<RiskItem[]> {
   if (risks.length === 0) return [];
 
-  const { data: createdRisks, error } = await supabaseServer
+  const supabase = getSupabaseServer();
+  
+  const { data: createdRisks, error } = await supabase
     .from("risk_items")
     .insert(risks)
     .select();
@@ -264,8 +296,10 @@ export async function getOrCreateRepository(data: {
   full_name: string;
   default_branch?: string;
 }): Promise<Repository> {
+  const supabase = getSupabaseServer();
+  
   // Try to get existing repository
-  const { data: existing } = await supabaseServer
+  const { data: existing } = await supabase
     .from("repositories")
     .select("*")
     .eq("repo_id", data.repo_id)
@@ -276,7 +310,7 @@ export async function getOrCreateRepository(data: {
   }
 
   // Create new repository
-  const { data: repo, error } = await supabaseServer
+  const { data: repo, error } = await supabase
     .from("repositories")
     .insert([data])
     .select()
@@ -305,8 +339,10 @@ export async function getOrCreateUser(
   email?: string,
   avatarUrl?: string
 ): Promise<User> {
+  const supabase = getSupabaseServer();
+  
   // Try to get existing user
-  const { data: existing } = await supabaseServer
+  const { data: existing } = await supabase
     .from("users")
     .select("*")
     .eq("github_id", githubId)
@@ -319,7 +355,7 @@ export async function getOrCreateUser(
       if (email) updates.email = email;
       if (avatarUrl) updates.avatar_url = avatarUrl;
 
-      const { data: updated } = await supabaseServer
+      const { data: updated } = await supabase
         .from("users")
         .update(updates)
         .eq("id", existing.id)
@@ -332,7 +368,7 @@ export async function getOrCreateUser(
   }
 
   // Create new user
-  const { data: user, error } = await supabaseServer
+  const { data: user, error } = await supabase
     .from("users")
     .insert([
       {
@@ -362,7 +398,9 @@ export async function getOrCreateUser(
 export async function getRepositoryByRepoId(
   repoId: string
 ): Promise<Repository | null> {
-  const { data: repo, error } = await supabaseServer
+  const supabase = getSupabaseServer();
+  
+  const { data: repo, error } = await supabase
     .from("repositories")
     .select("*")
     .eq("repo_id", repoId)
@@ -386,7 +424,9 @@ export async function getRepositoryByRepoId(
  * @returns Total count
  */
 export async function countUserReleases(userId: string): Promise<number> {
-  const { count, error } = await supabaseServer
+  const supabase = getSupabaseServer();
+  
+  const { count, error } = await supabase
     .from("releases")
     .select("*", { count: "exact", head: true })
     .eq("repositories.user_id", userId);
@@ -415,12 +455,19 @@ export async function logWebhook(data: {
   error_message?: string;
   release_id?: string;
 }): Promise<void> {
-  const { error } = await supabaseServer
-    .from("webhook_logs")
-    .insert([data]);
+  try {
+    const supabase = getSupabaseServer();
+    
+    const { error } = await supabase
+      .from("webhook_logs")
+      .insert([data]);
 
-  if (error) {
-    console.error("Error logging webhook:", error);
+    if (error) {
+      console.error("Error logging webhook:", error);
+      // Don't throw - logging failures shouldn't break the webhook
+    }
+  } catch (error) {
+    console.error("Error initializing Supabase for webhook logging:", error);
     // Don't throw - logging failures shouldn't break the webhook
   }
 }
