@@ -90,7 +90,7 @@ export default function ReleaseConfidenceBlogPost() {
           {/* Section 1 */}
           <section className="mb-12">
             <h2 className="mb-4 text-3xl font-bold text-white">
-              The Problem Nobody's Talking About
+              The Problem Nobody&apos;s Talking About
             </h2>
             <p className="mb-4 leading-relaxed text-slate-300">
               Every team ships code. Every team runs tests. And every team measures the same metrics: 
@@ -125,7 +125,7 @@ export default function ReleaseConfidenceBlogPost() {
           {/* Section 2 */}
           <section className="mb-12">
             <h2 className="mb-4 text-3xl font-bold text-white">
-              Why Testing Isn't Enough
+              Why Testing Isn&apos;t Enough
             </h2>
             <p className="mb-4 leading-relaxed text-slate-300">
               This is the uncomfortable truth:{" "}
@@ -139,7 +139,7 @@ export default function ReleaseConfidenceBlogPost() {
             <ul className="mb-6 space-y-2 text-slate-300">
               <li className="flex items-start">
                 <span className="mr-2 text-purple-400">•</span>
-                <span>Infrastructure changes that didn't get updated</span>
+                <span>{`Infrastructure changes that didn't get updated`}</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-purple-400">•</span>
@@ -147,7 +147,7 @@ export default function ReleaseConfidenceBlogPost() {
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-purple-400">•</span>
-                <span>Third-party API changes you didn't anticipate</span>
+                <span>{`Third-party API changes you didn't anticipate`}</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-purple-400">•</span>
@@ -166,8 +166,8 @@ export default function ReleaseConfidenceBlogPost() {
               You can have 100% code coverage and still deploy something that breaks production.
             </p>
             <p className="mt-4 leading-relaxed text-slate-300">
-              The metrics that matter aren't about code quality.{" "}
-              <span className="font-semibold text-white">They're about deployment safety.</span>
+              {`The metrics that matter aren't about code quality.`}{" "}
+              <span className="font-semibold text-white">{`They're about deployment safety.`}</span>
             </p>
           </section>
 
@@ -178,18 +178,18 @@ export default function ReleaseConfidenceBlogPost() {
             </h2>
             <p className="mb-4 leading-relaxed text-slate-300">
               I started asking a different question. Instead of{" "}
-              <em className="text-slate-400">"Is the code good?"</em> I asked{" "}
-              <strong className="text-white">"Is it safe to deploy right now?"</strong>
+              <em className="text-slate-400">{`"Is the code good?"`}</em> I asked{" "}
+              <strong className="text-white">{`"Is it safe to deploy right now?"`}</strong>
             </p>
             <p className="mb-6 leading-relaxed text-slate-300">
-              Release confidence isn't binary. It's not "pass" or "fail." It's a{" "}
+              {`Release confidence isn't binary. It's not "pass" or "fail." It's a`}{" "}
               <span className="font-semibold text-white">probability</span>—a real assessment 
               of whether your deployment will succeed.
             </p>
 
             <div className="my-8 rounded-lg border border-purple-500/30 bg-purple-900/20 p-6">
               <h3 className="mb-4 text-xl font-bold text-white">
-                Here's what goes into release confidence:
+                {`Here's what goes into release confidence:`}
               </h3>
               <div className="space-y-4">
                 <div>
@@ -271,10 +271,10 @@ export default function ReleaseConfidenceBlogPost() {
               <div className="rounded-lg border border-red-500/30 bg-red-900/20 p-6">
                 <p className="mb-2 font-semibold text-white">Team Meeting, 3pm:</p>
                 <ul className="ml-4 space-y-1 text-slate-300">
-                  <li>QA: "Tests look good"</li>
-                  <li>Dev: "Should we ship?"</li>
-                  <li>Product: "We're late. Let's go"</li>
-                  <li>QA: "Um... yeah, probably?"</li>
+                  <li>{`QA: "Tests look good"`}</li>
+                  <li>{`Dev: "Should we ship?"`}</li>
+                  <li>{`Product: "We're late. Let's go"`}</li>
+                  <li>{`QA: "Um... yeah, probably?"`}</li>
                   <li className="mt-3 text-red-400">
                     <strong>5 hours later:</strong> Production incident
                   </li>
@@ -290,7 +290,7 @@ export default function ReleaseConfidenceBlogPost() {
                 <p className="mb-2 font-semibold text-white">Team Meeting, 3pm:</p>
                 <ul className="ml-4 space-y-1 text-slate-300">
                   <li>Dashboard shows: <strong className="text-green-400">94% Release Confidence</strong></li>
-                  <li>Recommendation: "All systems go. Safe to deploy. Estimated time: 30 minutes"</li>
+                  <li>{`Recommendation: "All systems go. Safe to deploy. Estimated time: 30 minutes"`}</li>
                   <li>Team deploys with confidence</li>
                   <li className="mt-3 text-green-400">
                     <strong>Nothing breaks</strong>
@@ -300,7 +300,7 @@ export default function ReleaseConfidenceBlogPost() {
             </div>
 
             <p className="mt-6 text-center text-xl font-semibold text-purple-400">
-              That's the difference.
+              {`That's the difference.`}
             </p>
           </section>
 
@@ -350,7 +350,7 @@ export default function ReleaseConfidenceBlogPost() {
               </div>
             </div>
             <blockquote className="my-8 border-l-4 border-purple-500 bg-purple-900/20 p-6 italic text-slate-200">
-              "We went from 'fingers crossed' deployments to confident releases. The whole culture changed."
+              {`"We went from 'fingers crossed' deployments to confident releases. The whole culture changed."`}
               <footer className="mt-2 text-sm text-slate-400">— Engineering Leader</footer>
             </blockquote>
           </section>
@@ -362,15 +362,15 @@ export default function ReleaseConfidenceBlogPost() {
             </h2>
             <p className="mb-4 leading-relaxed text-slate-300">
               Your testing is probably fine. Your coverage is probably good. Your team probably 
-              knows what they're doing.
+              knows what {`they're`} doing.
             </p>
             <p className="mb-4 text-lg font-semibold text-white">
-              The problem isn't capability. The problem is visibility.
+              {`The problem isn't capability. The problem is visibility.`}
             </p>
             <p className="mb-4 leading-relaxed text-slate-300">
-              You don't have a single place to see:{" "}
+              You don&apos;t have a single place to see:{" "}
               <span className="font-semibold text-purple-400">
-                "Is it safe to deploy right now?"
+                {`"Is it safe to deploy right now?"`}
               </span>
             </p>
             <p className="text-lg text-slate-300">
@@ -381,17 +381,17 @@ export default function ReleaseConfidenceBlogPost() {
           {/* Section 7 */}
           <section className="mb-12">
             <h2 className="mb-4 text-3xl font-bold text-white">
-              What's Next?
+              What&apos;s Next?
             </h2>
             <p className="mb-4 leading-relaxed text-slate-300">
-              The question isn't <em className="text-slate-400">"did we test enough?"</em>
+              The question isn&apos;t <em className="text-slate-400">{`"did we test enough?"`}</em>
             </p>
             <p className="mb-6 text-xl font-semibold text-white">
-              The real question is "are we confident enough?"
+              {`The real question is "are we confident enough?"`}
             </p>
             <p className="mb-4 leading-relaxed text-slate-300">
-              If you've ever felt that deployment anxiety—that moment before you hit deploy 
-              where your stomach drops—you know why this matters.
+              {`If you've ever felt that deployment anxiety—that moment before you hit deploy 
+              where your stomach drops—you know why this matters.`}
             </p>
             <p className="text-lg font-semibold text-purple-400">
               Your team deserves better than guessing.
@@ -402,13 +402,13 @@ export default function ReleaseConfidenceBlogPost() {
           <section className="my-12">
             <div className="rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-900/40 to-slate-800/40 p-8 text-center">
               <h3 className="mb-4 text-2xl font-bold text-white">
-                Want to measure your team's release confidence?
+                {`Want to measure your team's release confidence?`}
               </h3>
               <p className="mb-6 text-slate-300">
-                We're launching Zuranis next week—a platform that calculates release confidence 
+                {`We're launching Zuranis next week—a platform that calculates release confidence 
                 for every deployment. It works with any testing framework (Jest, Karate, pytest, 
                 Go, .NET, etc.), integrates with your CI/CD pipeline, and gives you the answer 
-                in seconds: <strong className="text-white">"Go or no-go?"</strong>
+                in seconds:`} <strong className="text-white">{`"Go or no-go?"`}</strong>
               </p>
               <a
                 href="https://form.typeform.com/to/w13QGxSf"
@@ -427,9 +427,9 @@ export default function ReleaseConfidenceBlogPost() {
               One More Thing
             </h2>
             <p className="mb-4 leading-relaxed text-slate-300">
-              If you're a VP Engineering, Tech Lead, or Engineering Manager, I'd love to hear 
+              {`If you're a VP Engineering, Tech Lead, or Engineering Manager, I'd love to hear 
               what "deployment anxiety" looks like in your team. What metrics would actually 
-              make you confident before hitting deploy?
+              make you confident before hitting deploy?`}
             </p>
             <p className="text-slate-300">
               Feel free to reach out. Always happy to talk about how teams think about risk.
