@@ -53,7 +53,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           <div className="flex h-16 items-center justify-between px-6 border-b border-gray-200">
             <Link href="/" className="flex items-center space-x-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#667eea] to-[#764ba2]">
-                <span className="text-lg font-bold text-white">Z</span>
+                <span className="text-lg font-bold text-white">R</span>
               </div>
               <span className="text-xl font-bold text-[#2c3e50]">Releason</span>
             </Link>

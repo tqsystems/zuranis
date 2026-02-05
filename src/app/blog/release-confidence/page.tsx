@@ -48,7 +48,7 @@ export default function ReleaseConfidenceBlogPost() {
               href="/"
               className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent"
             >
-              ZURANIS
+              Releason
             </Link>
           </div>
         </div>
