@@ -1,6 +1,6 @@
 # Authentication Guide
 
-Complete guide to authentication in the Zuranis application using NextAuth.js and GitHub OAuth.
+Complete guide to authentication in the Releason application using NextAuth.js and GitHub OAuth.
 
 ## Table of Contents
 
@@ -61,7 +61,7 @@ Modify scopes in `src/lib/auth-options.ts` if needed.
 1. Go to [GitHub Developer Settings](https://github.com/settings/developers)
 2. Click **"New OAuth App"**
 3. Fill in the details:
-   - **Application name**: `Zuranis` (or your preferred name)
+   - **Application name**: `Releason` (or your preferred name)
    - **Homepage URL**: `http://localhost:3000`
    - **Authorization callback URL**: `http://localhost:3000/api/auth/callback/github`
 4. Click **"Register application"**

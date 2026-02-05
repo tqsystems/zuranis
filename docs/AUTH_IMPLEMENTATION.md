@@ -2,7 +2,7 @@
 
 ## ✅ Completed
 
-This document summarizes the production-ready authentication implementation for the Zuranis project.
+This document summarizes the production-ready authentication implementation for the Releason project.
 
 ## Files Created/Updated
 

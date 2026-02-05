@@ -262,7 +262,7 @@ if (!validateGitHubSignature(rawBody, signature || "", secret || "")) {
 export async function GET() {
   return NextResponse.json({
     status: "ok",
-    message: "Zuranis GitHub Webhook Endpoint",
+    message: "Releason GitHub Webhook Endpoint",
     version: "1.0.0",
   });
 }

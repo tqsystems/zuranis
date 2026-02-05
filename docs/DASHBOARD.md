@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Zuranis Dashboard is a Release Confidence Intelligence platform that provides real-time insights into test coverage, risk analysis, and release readiness.
+The Releason Dashboard is a Release Confidence Intelligence platform that provides real-time insights into test coverage, risk analysis, and release readiness.
 
 ## Features
 

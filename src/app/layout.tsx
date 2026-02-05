@@ -6,7 +6,7 @@ import { AuthProvider } from "@/components/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Zuranis",
+  title: "Releason",
   description: "Next.js application with NextAuth and Supabase",
 };
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-Your Zuranis dashboard has been successfully wired up to receive and display **real data** from GitHub Actions and Supabase!
+Your Releason dashboard has been successfully wired up to receive and display **real data** from GitHub Actions and Supabase!
 
 ---
 
@@ -287,7 +287,7 @@ SELECT * FROM webhook_logs ORDER BY created_at DESC LIMIT 10;
 
 ### Test Dashboard
 
-1. Sign in to Zuranis
+1. Sign in to Releason
 2. Navigate to `/dashboard`
 3. Should see one of:
    - ✅ Real release data (if webhook sent)

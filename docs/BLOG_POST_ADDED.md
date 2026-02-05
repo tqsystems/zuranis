@@ -128,7 +128,7 @@ A comprehensive blog post at `/blog/release-confidence` explaining why teams nee
 
 ### Meta Tags
 ```html
-<title>Why Every Team Needs Release Confidence | Zuranis Blog</title>
+<title>Why Every Team Needs Release Confidence | Releason Blog</title>
 <meta name="description" content="Testing catches bugs. Release confidence catches risks..." />
 ```
 
@@ -194,7 +194,7 @@ A comprehensive blog post at `/blog/release-confidence` explaining why teams nee
 
 ### Main Header
 ```
-[Zuranis] [Home] [Dashboard] [Blog] ... [Sign In/User Menu]
+[Releason] [Home] [Dashboard] [Blog] ... [Sign In/User Menu]
 ```
 
 ### Blog Post Header
@@ -206,7 +206,7 @@ A comprehensive blog post at `/blog/release-confidence` explaining why teams nee
 - `/` - Home
 - `/dashboard` - Dashboard
 - `/blog/release-confidence` - This blog post
-- `https://zuranis.com` - Early access CTA
+- `https://releason.com` - Early access CTA
 
 ---
 
@@ -342,7 +342,7 @@ red-400: #f87171 (error)
 **Created:** Full-featured blog post with dark theme and purple accents  
 **Updated:** Navigation to include Blog link  
 **Status:** ✅ Ready to deploy  
-**Impact:** Professional content marketing piece for Zuranis  
+**Impact:** Professional content marketing piece for Releason  
 
 The blog post is production-ready and follows all the requirements:
 - Dark theme with purple accents

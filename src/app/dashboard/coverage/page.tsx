@@ -2,7 +2,7 @@ import { requireAuth } from "@/lib/auth";
 import { DashboardLayout } from "@/components/DashboardLayout";
 
 export const metadata = {
-  title: "Coverage - Zuranis",
+  title: "Coverage - Releason",
   description: "Test Coverage Analysis",
 };
 

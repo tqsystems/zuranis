@@ -1,6 +1,6 @@
-# Getting Started with Zuranis
+# Getting Started with Releason
 
-This guide will help you get up and running with the Zuranis project in minutes.
+This guide will help you get up and running with the Releason project in minutes.
 
 ## Prerequisites
 
@@ -51,7 +51,7 @@ NEXTAUTH_SECRET=<paste_your_generated_secret_here>
 1. Go to [GitHub Developer Settings](https://github.com/settings/developers)
 2. Click **"New OAuth App"**
 3. Fill in:
-   - **Application name**: `Zuranis Dev` (or any name you prefer)
+   - **Application name**: `Releason Dev` (or any name you prefer)
    - **Homepage URL**: `http://localhost:3000`
    - **Authorization callback URL**: `http://localhost:3000/api/auth/callback/github`
 4. Click **"Register application"**
@@ -94,7 +94,7 @@ The application will be available at [http://localhost:3000](http://localhost:30
 ### 4. Test the Application
 
 1. Open your browser to `http://localhost:3000`
-2. You should see the Zuranis home page
+2. You should see the Releason home page
 3. Click **"Sign in"** in the header (or navigate to `/auth/signin`)
 4. Click **"Sign in with GitHub"**
 5. Authorize the application

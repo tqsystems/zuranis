@@ -2,11 +2,11 @@
 
 ## Overview
 
-This guide explains how to configure your GitHub Actions workflow to send coverage data to Zuranis.
+This guide explains how to configure your GitHub Actions workflow to send coverage data to Releason.
 
 ## Required Workflow Output
 
-Your GitHub Actions workflow must send a POST request to the Zuranis webhook endpoint with the following JSON payload structure:
+Your GitHub Actions workflow must send a POST request to the Releason webhook endpoint with the following JSON payload structure:
 
 ### Webhook Endpoint
 
@@ -97,7 +97,7 @@ X-GitHub-Delivery: <unique-delivery-id>
 
 ## Example GitHub Actions Workflow
 
-Here's a complete example workflow that runs tests, generates coverage, and sends data to Zuranis:
+Here's a complete example workflow that runs tests, generates coverage, and sends data to Releason:
 
 ```yaml
 name: Test and Coverage
@@ -133,7 +133,7 @@ jobs:
           # Adjust based on your test framework
           npm run test:coverage -- --json --outputFile=coverage/coverage-summary.json
       
-      - name: Send coverage to Zuranis
+      - name: Send coverage to Releason
         if: github.ref == 'refs/heads/main'
         env:
           ZURANIS_WEBHOOK_URL: ${{ secrets.ZURANIS_WEBHOOK_URL }}
@@ -194,7 +194,7 @@ const signature = 'sha256=' + crypto
   .update(payloadString)
   .digest('hex');
 
-// Send to Zuranis
+// Send to Releason
 fetch(process.env.ZURANIS_WEBHOOK_URL, {
   method: 'POST',
   headers: {
@@ -207,7 +207,7 @@ fetch(process.env.ZURANIS_WEBHOOK_URL, {
 })
 .then(response => response.json())
 .then(data => {
-  console.log('✅ Coverage sent to Zuranis successfully!');
+  console.log('✅ Coverage sent to Releason successfully!');
   console.log('Release ID:', data.release_id);
   console.log('Metrics:', data.metrics);
 })
@@ -306,7 +306,7 @@ Check the `webhook_logs` table in Supabase to see if the webhook was received an
 
 ### Webhook Signature Validation Failed
 
-- Verify `GITHUB_WEBHOOK_SECRET` matches between GitHub Actions and Zuranis
+- Verify `GITHUB_WEBHOOK_SECRET` matches between GitHub Actions and Releason
 - Ensure the secret is the same in both places (no extra spaces)
 - Check that the signature is being generated correctly
 

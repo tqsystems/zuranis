@@ -3,7 +3,7 @@ import { DashboardLayout } from "@/components/DashboardLayout";
 import { DashboardClient } from "@/components/dashboard/DashboardClient";
 
 export const metadata = {
-  title: "Dashboard - Zuranis",
+  title: "Dashboard - Releason",
   description: "Release Confidence Intelligence Dashboard",
 };
 

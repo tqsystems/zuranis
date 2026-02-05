@@ -98,7 +98,7 @@ export function DashboardClient({ user }: DashboardClientProps) {
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">
-            Welcome to Zuranis, {user.name || user.login || "User"}!
+            Welcome to Releason, {user.name || user.login || "User"}!
           </h1>
           <p className="mt-1 text-sm text-gray-600">
             Get started by setting up your first release

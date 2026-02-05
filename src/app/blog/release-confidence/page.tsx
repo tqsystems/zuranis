@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FiArrowLeft, FiClock, FiCalendar } from "react-icons/fi";
 
 export const metadata: Metadata = {
-  title: "Why Every Team Needs Release Confidence (Not Just Code Coverage) | Zuranis Blog",
+  title: "Why Every Team Needs Release Confidence (Not Just Code Coverage) | Releason Blog",
   description:
     "Testing catches bugs. Release confidence catches risks. Learn why 95% code coverage isn't enough and how to measure what actually matters for deployment safety.",
   openGraph: {
@@ -405,7 +405,7 @@ export default function ReleaseConfidenceBlogPost() {
                 {`Want to measure your team's release confidence?`}
               </h3>
               <p className="mb-6 text-slate-300">
-                {`We're launching Zuranis next week—a platform that calculates release confidence 
+                {`We're launching Releason next week—a platform that calculates release confidence 
                 for every deployment. It works with any testing framework (Jest, Karate, pytest, 
                 Go, .NET, etc.), integrates with your CI/CD pipeline, and gives you the answer 
                 in seconds:`} <strong className="text-white">{`"Go or no-go?"`}</strong>
@@ -461,7 +461,7 @@ export default function ReleaseConfidenceBlogPost() {
                 <p className="text-slate-300">
                   Principal QA Engineer with 12+ years of experience in test automation, 
                   quality engineering, and building tools that help teams ship with confidence. 
-                  Currently building Zuranis to solve the deployment anxiety problem for 
+                  Currently building Releason to solve the deployment anxiety problem for 
                   engineering teams everywhere.
                 </p>
               </div>

@@ -1,4 +1,4 @@
-# Zuranis Setup Guide
+# Releason Setup Guide
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ cp .env.local.example .env.local
 1. Go to [GitHub Developer Settings](https://github.com/settings/developers)
 2. Click "New OAuth App"
 3. Fill in the application details:
-   - **Application name**: Zuranis (or your preferred name)
+   - **Application name**: Releason (or your preferred name)
    - **Homepage URL**: `http://localhost:3000`
    - **Authorization callback URL**: `http://localhost:3000/api/auth/callback/github`
 4. After creating the app, copy the **Client ID** and generate a **Client Secret**
@@ -73,7 +73,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## Project Structure
 
 ```
-zuranis/
+releason/
 ├── src/
 │   ├── app/              # Next.js app router pages
 │   │   ├── api/          # API routes

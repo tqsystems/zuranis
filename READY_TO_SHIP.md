@@ -388,8 +388,8 @@ railway up
 
 ### Docker
 ```bash
-docker build -t zuranis .
-docker run -p 3000:3000 zuranis
+docker build -t releason .
+docker run -p 3000:3000 releason
 ```
 
 ### Self-Hosted

@@ -244,10 +244,10 @@ ngrok http 3000
 
 ## Step 6: Configure GitHub Actions (2 minutes)
 
-Create `.github/workflows/zuranis.yml` in your repository:
+Create `.github/workflows/releason.yml` in your repository:
 
 ```yaml
-name: Zuranis Coverage Report
+name: Releason Coverage Report
 
 on:
   push:
@@ -274,7 +274,7 @@ jobs:
       - name: Run tests with coverage
         run: npm test -- --coverage --coverageReporters=json
       
-      - name: Send coverage to Zuranis
+      - name: Send coverage to Releason
         if: always()
         run: |
           # Get coverage data
@@ -316,7 +316,7 @@ jobs:
           # Calculate signature
           SIGNATURE=$(echo -n "$PAYLOAD" | openssl dgst -sha256 -hmac "${{ secrets.ZURANIS_WEBHOOK_SECRET }}" | awk '{print $2}')
           
-          # Send to Zuranis
+          # Send to Releason
           curl -X POST ${{ secrets.ZURANIS_WEBHOOK_URL }} \
             -H "Content-Type: application/json" \
             -H "X-Hub-Signature-256: sha256=$SIGNATURE" \
@@ -337,8 +337,8 @@ jobs:
 ### Commit and Push
 
 ```bash
-git add .github/workflows/zuranis.yml
-git commit -m "Add Zuranis coverage reporting"
+git add .github/workflows/releason.yml
+git commit -m "Add Releason coverage reporting"
 git push
 ```
 

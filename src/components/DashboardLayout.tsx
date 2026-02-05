@@ -55,7 +55,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#667eea] to-[#764ba2]">
                 <span className="text-lg font-bold text-white">Z</span>
               </div>
-              <span className="text-xl font-bold text-[#2c3e50]">Zuranis</span>
+              <span className="text-xl font-bold text-[#2c3e50]">Releason</span>
             </Link>
             <button
               onClick={() => setSidebarOpen(false)}
@@ -124,7 +124,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#667eea] to-[#764ba2]">
               <span className="text-lg font-bold text-white">Z</span>
             </div>
-            <span className="text-xl font-bold text-[#2c3e50]">Zuranis</span>
+            <span className="text-xl font-bold text-[#2c3e50]">Releason</span>
           </div>
           <UserAvatar user={session?.user} size="sm" />
         </div>

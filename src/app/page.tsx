@@ -12,7 +12,7 @@ export default async function Home() {
         <div className="z-10 max-w-5xl w-full items-center justify-center">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent lg:text-6xl">
-              Zuranis
+              Releason
             </h1>
             <p className="text-xl text-gray-600 mb-8 lg:text-2xl">
               Release Confidence Intelligence Platform

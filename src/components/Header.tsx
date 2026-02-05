@@ -12,7 +12,7 @@ export function Header() {
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <div className="flex items-center gap-8">
           <Link href="/" className="text-xl font-bold hover:text-gray-700 transition-colors">
-            Zuranis
+            Releason
           </Link>
           
           {/* Navigation Links */}

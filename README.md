@@ -1,4 +1,4 @@
-# Zuranis
+# Releason
 
 Release Confidence Intelligence Platform
 
@@ -27,7 +27,7 @@ A modern Next.js 14 application built with TypeScript, Tailwind CSS, NextAuth.js
 1. Clone the repository:
    ```bash
    git clone <your-repo-url>
-   cd zuranis
+   cd releason
    ```
 
 2. Install dependencies:
@@ -63,7 +63,7 @@ A modern Next.js 14 application built with TypeScript, Tailwind CSS, NextAuth.js
 ## Project Structure
 
 ```
-zuranis/
+releason/
 ├── src/
 │   ├── app/              # Next.js app router pages and API routes
 │   ├── components/       # Reusable React components

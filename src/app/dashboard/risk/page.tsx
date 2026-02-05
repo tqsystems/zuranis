@@ -2,7 +2,7 @@ import { requireAuth } from "@/lib/auth";
 import { DashboardLayout } from "@/components/DashboardLayout";
 
 export const metadata = {
-  title: "Risk Analysis - Zuranis",
+  title: "Risk Analysis - Releason",
   description: "Release Risk Assessment",
 };
 
