@@ -14,12 +14,11 @@ export default async function Home() {
             <h1 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent lg:text-6xl">
               Releason
             </h1>
-            <p className="text-xl text-gray-600 mb-8 lg:text-2xl">
-              Release Confidence Intelligence Platform
+            <p className="text-xl text-gray-600 mb-4 lg:text-2xl font-semibold">
+              Ship confident. Ship informed.
             </p>
             <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-              Ship with confidence. Understand your test coverage, assess risks,
-              and make informed decisions about your releases.
+            Not zero risk. <span className="font-bold text-green-400">Acceptable risk.</span> Know the difference before you deploy.   
             </p>
 
             {user ? (
